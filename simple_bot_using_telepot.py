@@ -23,7 +23,6 @@ def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
     top_id = 0
     bottom_id = 0
-    port = int(os.environ.get("PORT", 5000))
 
     def run():
         if content_type == 'text':
@@ -124,7 +123,7 @@ def handle(msg):
         resize_keyboard=True
         ))
 
-    run(host='0.0.0.0', port=port)
+    run()
 
 bot = telepot.Bot(token=os.environ.get('TOKEN'))
 MessageLoop(bot, handle).run_forever()

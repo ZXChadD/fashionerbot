@@ -125,7 +125,7 @@ def handle(msg):
 
     run()
 
-bot = telepot.Bot(token=TOKEN)
+bot = telepot.Bot(token=os.environ.get('TOKEN'))
 MessageLoop(bot, handle).run_forever()
 
 
@@ -133,4 +133,4 @@ MessageLoop(bot, handle).run_forever()
 while 1:
     time.sleep(10)
 
-bot.setWebhook(HEROKU_URL + TOKEN)
+bot.setWebhook(os.environ.get('HEROKU_URL') + os.environ.get('TOKEN'))

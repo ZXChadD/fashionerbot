@@ -101,7 +101,7 @@ def handle(msg):
             clothes_type = 'tops'
 
         db.add_item(clothes_type, result, chat_id, file_id['file_id'])
-        reply = 'Added an item'
+        reply = 'Added an item\nNice {0}!'.format(result)
         shuffle_reset_keys(reply)
 
     def accept_reject_keys():

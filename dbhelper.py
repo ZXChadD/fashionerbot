@@ -12,7 +12,7 @@ class DBHelper:
         host = url.hostname
         port = url.port
 
-        conn = psycopg2.connect(
+        self.conn = psycopg2.connect(
                     dbname=dbname,
                     user=user,
                     password=password,

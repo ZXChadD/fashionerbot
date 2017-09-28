@@ -1,1 +1,1 @@
-web: gunicorn -b 0.0.0.0:$PORT simple_bot_using_telepot:app
+web: 0.0.0.0:$PORT python my_bot.py

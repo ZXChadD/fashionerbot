@@ -23,6 +23,7 @@ def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
     top_id = 0
     bottom_id = 0
+    host='0.0.0.0'
 
     def run():
         if content_type == 'text':

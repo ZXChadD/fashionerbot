@@ -1,3 +1,4 @@
+import os
 import sys
 import time
 import random
@@ -124,7 +125,7 @@ def handle(msg):
 
     run()
 
-bot = telepot.Bot(token=TOKEN)
+bot = telepot.Bot(token='TOKEN')
 MessageLoop(bot, handle).run_forever()
 
 

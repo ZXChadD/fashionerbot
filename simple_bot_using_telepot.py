@@ -8,8 +8,6 @@ import sqlite3
 import telepot
 from telepot.loop import MessageLoop
 from telepot.namedtuple import ReplyKeyboardMarkup, KeyboardButton
-from flask import Flask
-app = Flask(__name__)
 
 #Clarafai
 from clarifai.rest import ClarifaiApp
@@ -25,7 +23,7 @@ def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
     top_id = 0
     bottom_id = 0
-    host='0.0.0.0'
+    port = int(os.environ.get("PORT", 5000))
 
     def run():
         if content_type == 'text':
@@ -126,14 +124,10 @@ def handle(msg):
         resize_keyboard=True
         ))
 
-    run()
+    run(host='0.0.0.0', port=port)
 
 bot = telepot.Bot(token=os.environ.get('TOKEN'))
 MessageLoop(bot, handle).run_forever()
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
 
 # Keep the program running.
 while 1:

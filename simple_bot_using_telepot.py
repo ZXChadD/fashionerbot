@@ -91,7 +91,7 @@ def handle(msg):
             db.accept_items(chat_id, file_id)
 
     def add_photo(file_id):
-        photo_url = 'https://api.telegram.org/file/bot{0}/{1}'.format('TOKEN', file_id['file_path'])
+        photo_url = 'https://api.telegram.org/file/bot{0}/{1}'.format(os.environ.get('TOKEN'), file_id['file_path'])
         result = model.predict_by_url(url=photo_url)
         result = result['outputs'][-1]['data']['concepts'][0]['name']
 

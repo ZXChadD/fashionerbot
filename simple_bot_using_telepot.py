@@ -127,8 +127,9 @@ def handle(msg):
 bot = telepot.Bot(token=TOKEN)
 MessageLoop(bot, handle).run_forever()
 
-bot.setWebhook("https://fashionerbot.herokuapp.com/" + TOKEN)
 
 # Keep the program running.
 while 1:
     time.sleep(10)
+
+bot.setWebhook(HEROKU_URL + TOKEN)

@@ -1,1 +1,1 @@
-worker: python simple_bot_using_telepot.py  
+web: gunicorn -b 0.0.0.0:$PORT simple_bot_using_telepot:app

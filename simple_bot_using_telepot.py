@@ -26,9 +26,11 @@ def handle(msg):
     def run():
         if content_type == 'text':
             if msg['text'] == '/start':
-                reply = 'Welcome to FashionBot.\n This bot helps to choose your daily outfits from your wardrobe.\n Please send indiviudal pictures of your clothes to me. When you are done, press the Shuffle to pick a set of clothes. Press Reset when you have ran out clothes. Go ahead to try it out!'
+                start = 'Welcome to FashionBot.\n This bot helps to choose your daily outfits from your wardrobe.\n Please send indiviudal pictures of your clothes to me. When you are done, press the Shuffle to pick a set of clothes. Press Reset when you have ran out clothes. Go ahead to try it out!'
+                bot.sendMessage(chat_id, start)
                 bot.sendPhoto(chat_id, 'https://cdn.shopify.com/s/files/1/0207/8508/products/Magnolia_Tees_Edit_4_of_17_1024x1024.jpg?v=1504703736')
                 bot.sendMessage(chat_id, 'You can take pictures of your clothes directly from the hanger as seen above.\n')
+                reply = None
                 shuffle_reset_keys(reply)
 
             if msg['text'] == 'Reset':

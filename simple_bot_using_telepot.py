@@ -52,9 +52,9 @@ def handle(msg):
                 shuffle_reset_keys(reply)
 
             if msg['text'] == 'Reject':
-                reply = 'Rejected'
-                results = get_photos()
-                shuffle_reset_keys(reply)
+                bot.sendMessage(chat_id, 'Rejected! Would you like this set of clothes instead?')
+                accept_reject_keys()
+
         else:
             file_id = bot.getFile(msg['photo'][1]['file_id'])
             add_photo(file_id)

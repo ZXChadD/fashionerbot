@@ -52,7 +52,8 @@ def handle(msg):
                 shuffle_reset_keys(reply)
 
             if msg['text'] == 'Reject':
-                bot.sendMessage(chat_id, 'Rejected! Would you like this set of clothes instead?')
+                bot.sendMessage(chat_id, 'Rejected!')
+                get_photos()
                 accept_reject_keys()
 
         else:

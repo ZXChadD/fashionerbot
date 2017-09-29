@@ -53,6 +53,7 @@ def handle(msg):
 
             if msg['text'] == 'Reject':
                 reply = 'Rejected'
+                results = get_photos()
                 shuffle_reset_keys(reply)
         else:
             file_id = bot.getFile(msg['photo'][1]['file_id'])

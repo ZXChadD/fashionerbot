@@ -60,7 +60,7 @@ def handle(msg):
                 bot.sendMessage(chat_id, 'Please use one of the in-built keys.')
 
         elif content_type == 'document':
-                bot.sendMessage(chat_id, 'Rejected! Please send me a photo instead of a file:)')
+            bot.sendMessage(chat_id, 'Rejected! Please send me a photo instead of a file:)')
 
         else:
             file_id = bot.getFile(msg['photo'][1]['file_id'])

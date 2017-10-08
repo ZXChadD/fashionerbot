@@ -26,19 +26,19 @@ def handle(msg):
     def run():
         if content_type == 'text':
             if msg['text'] == '/start':
-                start = 'Welcome to FashionBot.\n This bot helps to choose your daily outfits from your wardrobe.\n Please send indiviudal pictures of your clothes to me. When you are done, press the Shuffle to pick a set of clothes. Press Reset when you have ran out clothes. Go ahead to try it out!'
+                start = 'Welcome to FashionBot.\nThis bot helps to choose your daily outfits from your wardrobe.\nPlease send indiviudal pictures of your clothes to me. When you are done, press the Shuffle to pick a set of clothes. Press Reset when you have ran out clothes. Go ahead to try it out!'
                 bot.sendMessage(chat_id, start)
                 bot.sendPhoto(chat_id, 'https://cdn.shopify.com/s/files/1/0207/8508/products/Magnolia_Tees_Edit_4_of_17_1024x1024.jpg?v=1504703736')
                 bot.sendMessage(chat_id, 'You can take pictures of your clothes directly from the hanger as seen above.\n')
                 reply = None
                 shuffle_reset_keys(reply)
 
-            if msg['text'] == 'Reset':
+            elif msg['text'] == 'Reset':
                 reset_photos()
                 reply = 'Done!'
                 shuffle_reset_keys(reply)
 
-            if msg['text'] == 'Shuffle':
+            elif msg['text'] == 'Shuffle':
                 results = get_photos()
                 if results != False:
                     accept_reject_keys()
@@ -46,15 +46,21 @@ def handle(msg):
                     reply = 'Please add more clothes!'
                     shuffle_reset_keys(reply)
 
-            if msg['text'] == 'Accept':
+            elif msg['text'] == 'Accept':
                 accept()
                 reply = 'Good Choice:)'
                 shuffle_reset_keys(reply)
 
-            if msg['text'] == 'Reject':
+            elif msg['text'] == 'Reject':
                 bot.sendMessage(chat_id, 'Rejected!')
                 get_photos()
                 accept_reject_keys()
+
+            else:
+                bot.sendMessage(chat_id, 'Please use one of the in-built keys.')
+
+        elif content_type == 'file':
+                bot.sendMessage(chat_id, 'Please send me a photo instead of a file:)')
 
         else:
             file_id = bot.getFile(msg['photo'][1]['file_id'])

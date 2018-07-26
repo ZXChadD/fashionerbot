@@ -1,5 +1,6 @@
-aiohttp==2.2.5
-async-timeout==1.3.0
+aiohttp==3.3.2
+async-timeout==3.0.0
+attrs==18.1.0
 cachetools==2.0.1
 certifi==2017.7.27.1
 chardet==3.0.4
@@ -7,6 +8,7 @@ clarifai==2.0.32
 click==6.7
 configparser==3.5.0
 dill==0.2.7.1
+Flask==0.12.2
 future==0.15.2
 google-auth==1.1.0
 google-cloud-core==0.27.1
@@ -14,12 +16,13 @@ google-cloud-vision==0.27.0
 google-gax==0.15.14
 googleapis-common-protos==1.5.2
 grpcio==1.6.0
-idna==2.6
+idna==2.7
+idna-ssl==1.1.0
 itsdangerous==0.24
 Jinja2==2.9.6
 jsonschema==2.5.1
 MarkupSafe==1.0
-multidict==3.1.3
+multidict==4.3.1
 Pillow==2.9.0
 ply==3.8
 protobuf==3.4.0
@@ -31,8 +34,8 @@ python-telegram-bot==8.0
 requests==2.18.4
 rsa==3.4.2
 six==1.11.0
-telepot==12.3
-urllib3==1.22
+telepot==12.7
+urllib3==1.23
 virtualenv==15.1.0
 Werkzeug==0.12.2
-yarl==0.12.0
+yarl==1.2.6
